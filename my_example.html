@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            #gender_selection_div {
+                margin-top: 150px;
+                text-align: center;
+            }
+
+            .boys-page {
+                background: blue;                
+            }
+
+            .girls-page {
+                background: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="gender_selection_div">
+            <span> Select Gender </span>
+            <select id="gender_selection_select">
+                <option value="boy"> Boy </option>
+                <option value="girl"> Girl </option>
+            </select>
+        </div>
+
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        
+        <!-- My Custom Script -->
+        <script>
+            // Add an event listener to the gender_selection_select element. The event is triggered everytime the user changes the selection value
+            $("#gender_selection_select").on("change", function() {
+                // This code is run when the user changes the gender selection
+                
+                // get the new value of the gender_selection_select
+                var gender = $("#gender_selection_select").val();
+
+                // log the gender to the console (for debugging purposes)
+                console.log(gender);
+
+                if(gender == "boy") {
+                    // the user selected the boy option
+
+                    // remove the girls-page class from the page body
+                    $("body").removeClass("girls-page");
+
+                    // add the boys-page class to the page body 
+                    $("body").addClass("boys-page");
+                } else if(gender == "girl") {
+                    // the user selected the girl option
+
+                    // remove the boys-page class from the page body
+                    $("body").removeClass("boys-page");
+
+                    // add the girls-page class to the page body
+                    $("body").addClass('girls-page');
+                }
+            });
+        </script>
+    </body>    
+</html>
