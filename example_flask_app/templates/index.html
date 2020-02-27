@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <!-- Import Bootstrap via CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> Goal App </h1>
+            <hr>
+            <form action="/create_goal" method="POST">
+                <div class="row">
+                    <div class="col-3">
+                        
+                    </div>
+                    <div class="col-4">
+                        <input type="text" placeholder="Enter goal" class="form-control" name="my_goal">
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary"> Submit </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Import JQuery via CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>        
+        <!-- import our index.js file in the folder named "static" -->
+        <script src="{{url_for('static', filename='index.js')}}"></script>
+    </body>
+</html>
